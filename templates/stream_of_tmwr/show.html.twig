@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}StreamOfTMWR{% endblock %}
+
+{% block body %}
+    <h1>StreamOfTMWR</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ stream_of_t_m_w_r.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_stream_of_t_m_w_r_index') }}">back to list</a>
+
+    <a href="{{ path('app_stream_of_t_m_w_r_edit', {'id': stream_of_t_m_w_r.id}) }}">edit</a>
+
+    {{ include('stream_of_tmwr/_delete_form.html.twig') }}
+{% endblock %}

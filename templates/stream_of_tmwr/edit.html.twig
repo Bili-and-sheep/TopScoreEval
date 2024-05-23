@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit StreamOfTMWR{% endblock %}
+
+{% block body %}
+    <h1>Edit StreamOfTMWR</h1>
+
+    {{ include('stream_of_tmwr/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_stream_of_t_m_w_r_index') }}">back to list</a>
+
+    {{ include('stream_of_tmwr/_delete_form.html.twig') }}
+{% endblock %}

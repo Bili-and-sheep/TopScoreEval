@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}StreamOfTMWR index{% endblock %}
+
+{% block body %}
+    <h1>StreamOfTMWR index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for stream_of_t_m_w_r in stream_of_t_m_w_rs %}
+            <tr>
+                <td>{{ stream_of_t_m_w_r.id }}</td>
+                <td>
+                    <a href="{{ path('app_stream_of_t_m_w_r_show', {'id': stream_of_t_m_w_r.id}) }}">show</a>
+                    <a href="{{ path('app_stream_of_t_m_w_r_edit', {'id': stream_of_t_m_w_r.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_stream_of_t_m_w_r_new') }}">Create new</a>
+{% endblock %}
